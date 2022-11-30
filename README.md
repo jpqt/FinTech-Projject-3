@@ -1,4 +1,5 @@
 # FinTech-Projject-3
+ KennyG
 # Puppy Pass (Utilization of NFTs for DoggyDayCare)
 
 # Summary of Puppy Pass: 
@@ -41,3 +42,6 @@ Kenny: contract/readme/PP
 -recruiting? puppy pass is an established company with a large clientele base, so recruiting won't be an issue. 
 
 asdlfgihoiuwef
+
+Finale
+testing josh
