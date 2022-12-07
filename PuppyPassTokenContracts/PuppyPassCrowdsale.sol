@@ -4,11 +4,11 @@ import "./PuppyPassMintable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
 
-contract PuppyPassCrowdsale is Crowdsale, MintedCrowdsale {
+contract PuppyPassTokenCrowdsale is Crowdsale, MintedCrowdsale {
     constructor(
         uint256 rate,
         address payable wallet,
-        PuppyPass token
+        PuppyPassToken token
     )
         Crowdsale(rate,wallet,token)
         public
@@ -28,12 +28,12 @@ contract PuppyPassCrowdsaleDeployer {
         address payable wallet
     ) public {
 
-        PuppyPass token = new PuppyPass(name,symbol,0);
+        PuppyPassToken token = new PuppyPassToken(name,symbol,0);
         puppypass_token_address = address(token);
 
-        PuppyPassCrowdsale puppy_pass_crowdsale = 
-            new PuppyPassCrowdsale(1,wallet,token);
-        puppypass_token_address = address(puppy_pass_crowdsale);
+        PuppyPassTokenCrowdsale puppy_pass_crowdsale = 
+            new PuppyPassTokenCrowdsale(1,wallet,token);
+        puppypass_crowdsale_address = address(puppy_pass_crowdsale);
 
         token.addMinter(puppypass_crowdsale_address);
         token.renounceMinter();
